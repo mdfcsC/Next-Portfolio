@@ -28,10 +28,7 @@ export default function Page() {
                         <h2 className="text-3xl font-semibold font-serif tracking-tight">
                             {/* 使用 {' '} 确保单词间距正确 */}
                             First game,{' '}
-                            <SmartLink
-                                href={minsweeperUrl}
-                                className="text-blue-300 hover:text-blue-100 underline decoration-2 underline-offset-2 transition-colors duration-200 cursor-pointer"
-                            >
+                            <SmartLink href={minsweeperUrl}>
                                 Minesweeper (My Version)
                             </SmartLink>
                         </h2>
@@ -39,14 +36,9 @@ export default function Page() {
                             <p>Best played in a real web browser, &apos;cause that&apos;s the only place I tested it.</p>
                             <p>
                                 See the{' '}
-                                <a 
-                                href="https://github.com/mdfcsC/My-Portfolio/blob/main/README.md#minesweeper"
-                                className="text-blue-300 hover:text-blue-100 underline decoration-2 underline-offset-2 transition-colors duration-200"
-                                target="_blank" // 确保链接在新标签页打开
-                                rel="noopener noreferrer" // 安全性考虑
-                                >
-                                README.md
-                                </a>{' '}
+                                <SmartLink href="https://github.com/mdfcsC/My-Portfolio/blob/main/README.md#minesweeper">
+                                    README
+                                </SmartLink>{' '}
                                 in my GitHub repo for more details, if you have access.
                             </p>
                         </div>
@@ -57,10 +49,7 @@ export default function Page() {
                         <div className="text-gray-100">
                             <p>
                                 With assistance of Claude and Cursor,{' '}
-                                <SmartLink 
-                                    href={jingBirthdayUrl}
-                                    className="text-blue-300 hover:text-blue-100 underline decoration-2 underline-offset-2 transition-colors duration-200 cursor-pointer"
-                                >
+                                <SmartLink href={jingBirthdayUrl}>
                                     a web page
                                 </SmartLink>{' '}
                                 modified based on someone else&apos;s codes and design.
