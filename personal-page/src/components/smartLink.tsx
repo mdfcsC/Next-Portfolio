@@ -1,4 +1,3 @@
-// components/SmartLink.tsx
 import Link from 'next/link';
 import { ReactNode, AnchorHTMLAttributes } from 'react';
 

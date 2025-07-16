@@ -1,5 +1,5 @@
 import Hero from "@/components/hero";
-import homeBG from "/public/images/CP_Bristol_WeChat_Pic_2025-07-14_222708_612.jpg";
+import homeBG from "/public/images/CP_Bristol_Shot_by_mdfcsC_2025-07-14_222708_612.jpg";
 
 export default function Home() {
   return (
