@@ -25,7 +25,7 @@ export default function Page() {
             <Hero imgData={projectsBG} imgAlt="Keep calm and drink coffee" heroTitle='See my "published work" !' >
                 <div className="text-white bg-black/60 container mx-auto p-8 rounded-lg space-y-8">
                     <section className="space-y-4">
-                        <h2 className="text-3xl font-semibold font-serif tracking-tight">
+                        <h2 className="text-3xl font-semibold">
                             {/* 使用 {' '} 确保单词间距正确 */}
                             First game,{' '}
                             <SmartLink href={minsweeperUrl}>
@@ -45,7 +45,7 @@ export default function Page() {
                     </section>
                     
                     <section className="space-y-4">
-                        <h2 className="text-3xl font-semibold font-serif tracking-tight">A birthday gift for my friend</h2>
+                        <h2 className="text-3xl font-semibold">A birthday gift for my friend</h2>
                         <div className="text-gray-100">
                             <p>
                                 With assistance of Claude and Cursor,{' '}

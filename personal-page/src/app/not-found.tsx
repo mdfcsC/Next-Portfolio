@@ -10,7 +10,7 @@ export default function NotFound() {
     return (
         // source: https://www.creative-tim.com/twcomponents/components/404-not-found-page
         <div className="min-h-screen w-screen flex items-center">
-            <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-5 pt-24 md:pt-32">
+            <div className="container mx-auto flex flex-col md:flex-row items-center justify-center px-5 p-24">
                 <div className="max-w-md">
                     <div className="text-5xl font-bold">404</div>
                     <p className="text-2xl md:text-3xl font-light leading-normal">
