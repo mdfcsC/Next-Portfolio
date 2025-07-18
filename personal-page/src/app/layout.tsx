@@ -1,5 +1,5 @@
 import "./globals.css";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 import { Gantari } from "next/font/google";
 
 const MyFont = Gantari({ subsets: ["latin"], weight: "400" });

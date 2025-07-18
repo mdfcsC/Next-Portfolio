@@ -1,11 +1,11 @@
 "use client"
 
-import Hero from "@/components/hero";
+import Hero from "@/components/Hero";
 import projectsBG from "/public/images/pexels-negativespace-169573.jpg";
 import { useEffect, useState } from "react";
-import SmartLink from "@/components/smartLink";
+import SmartLink from "@/components/SmartLink";
 
-export default function Page() {
+export default function ProjectsPage() {
 
     // 声明state来存储URL
     const [minsweeperUrl, setMinsweeperUrl] = useState('');

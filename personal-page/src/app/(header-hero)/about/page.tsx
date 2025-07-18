@@ -1,8 +1,8 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/Hero";
 import aboutBG from "/public/images/identity-1815811.jpg";
-import SmartLink from "@/components/smartLink";
+import SmartLink from "@/components/SmartLink";
 
-export default function Page() {
+export default function AboutPage() {
     return (
         <>
             <Hero imgData={aboutBG} imgAlt="Identity Picture" heroTitle='Who Am I' >

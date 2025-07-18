@@ -1,4 +1,4 @@
-import SmartLink from "./smartLink";
+import SmartLink from '@/components/SmartLink';
 
 export default function Footer() {
     return (
