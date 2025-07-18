@@ -56,6 +56,14 @@ export default function ProjectsPage() {
                             </p>
                         </div>
                     </section>
+
+                    <section className="space-y-4">
+                        <h2 className="text-3xl font-semibold">
+                            <SmartLink href="/pic-display">
+                                Click to Enter Temporary Gallery
+                            </SmartLink>
+                        </h2>
+                    </section>
                 </div>
             </Hero>
         </>
