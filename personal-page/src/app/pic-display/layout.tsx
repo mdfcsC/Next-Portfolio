@@ -9,8 +9,8 @@ export default function PicDisplayLayout({
 }>) {
     return (
         <>
-            {children}
             {modal}
+            {children}
         </>
     );
 }
