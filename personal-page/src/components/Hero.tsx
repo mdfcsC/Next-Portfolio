@@ -18,7 +18,7 @@ export default function Hero( props: HeroProps ) {
                 <Image src={props.imgData} alt={props.imgAlt} fill style={{ objectFit: props.objectFit || "cover", objectPosition: props.objectPosition || "center center", transform: props.scale ? `scale(${props.scale})` : undefined }} />
                 <div className="absolute inset-0 bg-gradient-to-tr from-slate-900"></div>
             </div>
-            <div className="pt-48 flex justify-center container mx-auto">
+            <div className="pt-48 flex justify-center container mx-auto p-5">
                 <h1 className="text-6xl font-serif font-extrabold">{props.heroTitle}</h1>
             </div>
             {props.children && (
