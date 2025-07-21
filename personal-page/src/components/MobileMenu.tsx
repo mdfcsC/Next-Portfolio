@@ -10,6 +10,11 @@ interface MenuItem {
     label: string;
 }
 
+interface OverlayProps {
+    isVisible: boolean;
+    onClick: () => void;
+}
+
 // 汉堡菜单按钮组件
 export const HamburgerButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     <button 
@@ -38,6 +43,19 @@ const CloseButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
     </div>
 );
 
+// 覆盖层组件
+const Overlay: React.FC<OverlayProps> = ({ isVisible, onClick }) => {
+    if (!isVisible) return null;
+    
+    return (
+        <div 
+            className="sm:hidden fixed inset-0 z-25 bg-transparent"
+            onClick={onClick}
+            aria-label="Close menu overlay"
+        />
+    );
+};
+
 // 菜单项组件
 const MenuItem: React.FC<{ item: MenuItem; onClose: () => void }> = ({ item, onClose }) => (
     <Link 
@@ -56,28 +74,40 @@ export const MobileMenu: React.FC<{ isOpen: boolean; onClose: () => void }> = ({
         opacity: 0.95
     };
 
+    // 阻止菜单内容点击事件冒泡
+    const handleMenuContentClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+    };
+
     return (
-        <div 
-            className={`sm:hidden fixed top-0 right-0 h-full w-48 backdrop-blur-md shadow-2xl z-30 transition-all duration-300 ease-in-out transform ${
-                isOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-            style={menuStyles}
-        >
-            <div className="flex flex-col h-full">
-                {/* 关闭按钮区域 */}
-                <div className="flex-shrink-0">
-                    <CloseButton onClick={onClose} />
-                </div>
-                
-                {/* 菜单项区域 */}
-                <div className="flex-1 overflow-y-auto px-8 pb-6 min-h-0">
-                    <div className="flex flex-col space-y-6">
-                        {NAVIGATION_ITEMS.map((item) => (
-                            <MenuItem key={item.href} item={item} onClose={onClose} />
-                        ))}
+        <>
+            {/* 覆盖层 */}
+            <Overlay isVisible={isOpen} onClick={onClose} />
+            
+            {/* 菜单内容 */}
+            <div 
+                className={`sm:hidden fixed top-0 right-0 h-full w-48 backdrop-blur-md shadow-2xl z-30 transition-all duration-300 ease-in-out transform ${
+                    isOpen ? 'translate-x-0' : 'translate-x-full'
+                }`}
+                style={menuStyles}
+                onClick={handleMenuContentClick}
+            >
+                <div className="flex flex-col h-full">
+                    {/* 关闭按钮区域 */}
+                    <div className="flex-shrink-0">
+                        <CloseButton onClick={onClose} />
+                    </div>
+                    
+                    {/* 菜单项区域 */}
+                    <div className="flex-1 overflow-y-auto px-8 pb-6 min-h-0">
+                        <div className="flex flex-col space-y-6">
+                            {NAVIGATION_ITEMS.map((item) => (
+                                <MenuItem key={item.href} item={item} onClose={onClose} />
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }; 
